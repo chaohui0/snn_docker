@@ -10,7 +10,6 @@ ENV PATH=/root/miniconda3/bin:${PATH}
 COPY requirement.txt .
 RUN pip install -r requirement.txt
 RUN pip install h5py matplotlib numpy pyside2
-RUN apt-get install -y g++-10
 RUN apt-get install -y cmake
 RUN apt-get install -y vim 
 RUN apt-get install -y python3-pip
