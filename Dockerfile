@@ -10,12 +10,7 @@ ENV PATH=/root/miniconda3/bin:${PATH}
 COPY requirement.txt .
 RUN pip install -r requirement.txt
 RUN pip install h5py matplotlib numpy pyside2
-RUN apt-get install -y cmake
-RUN apt-get install -y vim 
-RUN apt-get install -y python3-pip
-RUN apt-get install -y libhdf5-dev
-RUN apt-get install -y libxcb-xinerama0
-RUN apt install python3-h5py
+RUN apt-get install -y cmake vim  python3-pip libhdf5-dev libxcb-xinerama0 python3-h5py
 
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 100
 
