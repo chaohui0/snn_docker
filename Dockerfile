@@ -18,6 +18,8 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 && update
 RUN conda install -y libstdcxx-ng
 ENV LD_LIBRARY_PATH=/root/miniconda3/pkgs/libstdcxx-ng-11.2.0-h1234567_1/lib/:${LD_LIBRARY_PATH}
 
+RUN apt-get install ffmpeg libsm6 libxext6 libgl1 -y
+
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN export LANG=C.UTF-8
